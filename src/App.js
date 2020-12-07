@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
-import RouterConfig from './RouterConfig';
+import Home from './Components/Home';
+// import RouterConfig from './RouterConfig';
 
 function App() {
   return (
-    <RouterConfig />
+    <Home />
   );
 }
 

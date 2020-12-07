@@ -6,14 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
-import { NavLink } from 'react-router-dom';
-import Link from '@material-ui/core/Link';
-
+import { Link } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,7 +58,7 @@ ScrollTop.propTypes = {
 };
 
 export default function Navbar(props) {
-    const preventDefault = (event) => event.preventDefault();
+  const preventDefault = (event) => event.preventDefault();
 
   return (
     <React.Fragment>
@@ -70,13 +66,43 @@ export default function Navbar(props) {
       <AppBar>
         <Toolbar>
           <Typography variant="h6">Scroll to see button</Typography>
-          <NavLink to="/">Home</NavLink>
-          <Link href="#Service" component="Service" onClick={preventDefault}>Service</Link>
+          <Link
+            activeClass="active"
+            to="banner"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >Home</Link>
+          <Link
+            activeClass="active"
+            to="service"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >Service</Link>
+          <Link
+            activeClass="active"
+            to="portfolio"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >Portfolio</Link>
+          <Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-20}
+            duration={500}
+          >About</Link>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
       <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
+        <Fab color="primary" size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>

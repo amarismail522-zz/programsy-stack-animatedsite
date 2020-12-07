@@ -3,7 +3,9 @@ import React from 'react'
 function Portfolio() {
     return (
         <div>
-            Portfolio
+            <div id="portfolio" style={{background:'blue', width:"100%", height:"100vh" }}>
+           
+        </div>
         </div>
     )
 }

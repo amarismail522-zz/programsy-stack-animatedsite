@@ -2,15 +2,15 @@ import React from 'react'
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 
-function About() {
+function Banner() {
     return (
         <div>
-            <div id="about" 
-            style={{background:'green', width:"100%", height:"100vh" }}>
-                About   
+            <div id="banner" 
+            style={{background:'Yellow', width:"100%", height:"100vh" }}>
+                Hi Amar
         </div>
         </div>
     )
 }
 
-export default About;
+export default Banner
