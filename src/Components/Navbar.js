@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
@@ -10,6 +9,7 @@ import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
 import { Link } from 'react-scroll';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,47 +57,43 @@ ScrollTop.propTypes = {
   window: PropTypes.func,
 };
 
+const NavLists = {
+  list1: { home:"Home", id:"banner"},
+  list2: { home:"Service", id:"service"},
+  list3: { home:"Portfolio", id:"portfolio"},
+  list4: { home:"about", id:"about"},
+};
+console.log(NavLists["list1"]["home"])
+
 export default function Navbar(props) {
-  const preventDefault = (event) => event.preventDefault();
+
 
   return (
     <React.Fragment>
       <CssBaseline />
       <AppBar>
         <Toolbar>
-          <Typography variant="h6">Scroll to see button</Typography>
-          <Link
-            activeClass="active"
-            to="banner"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >Home</Link>
-          <Link
-            activeClass="active"
-            to="service"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >Service</Link>
-          <Link
-            activeClass="active"
-            to="portfolio"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-          >Portfolio</Link>
-          <Link
-            activeClass="active"
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-20}
-            duration={500}
-          >About</Link>
+          <Container>
+            <div className="flex">
+              <div>
+                Programsy
+              </div>
+              <div>
+                {NavLists.map((keyname, id) => {
+                  return (
+                    <Link key={id}
+                      activeClass="active"
+                      to="banner"
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                    >{keyname.home}</Link>
+                  )
+                })}
+              </div>
+            </div>
+          </Container>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />

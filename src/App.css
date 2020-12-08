@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* NAVBAR STYLING */
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.active{
+    border-bottom: 1px solid black;
+}
