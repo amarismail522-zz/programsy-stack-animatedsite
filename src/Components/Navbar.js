@@ -57,13 +57,13 @@ ScrollTop.propTypes = {
   window: PropTypes.func,
 };
 
-const NavLists = {
-  list1: { home:"Home", id:"banner"},
-  list2: { home:"Service", id:"service"},
-  list3: { home:"Portfolio", id:"portfolio"},
-  list4: { home:"about", id:"about"},
-};
-console.log(NavLists["list1"]["home"])
+const NavLists = [
+  { name: "Home", id: "banner" },
+  { name: "Service", id: "service" },
+  { name: "Portfolio", id: "portfolio" },
+  { name: "About", id: "about" },
+];
+
 
 export default function Navbar(props) {
 
@@ -79,16 +79,16 @@ export default function Navbar(props) {
                 Programsy
               </div>
               <div>
-                {NavLists.map((keyname, id) => {
+                {NavLists.map((item, id) => {
                   return (
-                    <Link key={id}
+                    <Link key={id} className="nav-item"
                       activeClass="active"
-                      to="banner"
+                      to={item.id}
                       spy={true}
                       smooth={true}
                       offset={-70}
                       duration={500}
-                    >{keyname.home}</Link>
+                    >{item.name}</Link>
                   )
                 })}
               </div>
