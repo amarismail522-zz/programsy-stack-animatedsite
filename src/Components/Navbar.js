@@ -10,6 +10,7 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import Zoom from '@material-ui/core/Zoom';
 import { Link } from 'react-scroll';
 import Container from '@material-ui/core/Container';
+import logo2 from '../images/logo2.gif';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,14 +72,14 @@ export default function Navbar(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar>
+      <AppBar className="Nav">
         <Toolbar>
           <Container>
             <div className="flex">
-              <div>
-                Programsy
+              <div className="logo-section">
+                <img src={logo2} className="logo-img" alt="Programsy"/>
               </div>
-              <div>
+              <div ClassName="Nav-links">
                 {NavLists.map((item, id) => {
                   return (
                     <Link key={id} className="nav-item"
